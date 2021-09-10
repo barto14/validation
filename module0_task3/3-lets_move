@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo mv [A-Z]* /tmp/U
+sudo mv [A-Z]* /tmp/u
