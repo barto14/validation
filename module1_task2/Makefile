@@ -1,14 +1,13 @@
-build : 
+build: ## construlle una pagina estatica con hugo y la guarda en dist 
 	hugo -D > /dev/null 2>&1
 
 .PHONY: clean
-clean :
+clean: ## elimina el directorio dist dentro de module1...
 	rm -rf ./dist/ > /dev/null 2>&1
 
-post : 
+post: ## crea un nuevo post en la carpeta que esta configurada en config.toml acepta dos argumentos el nombre del archivo .md (POST_NAME sin la extension) y el titulo del post (POST_TITLE)
 	hugo new posts/$(POST_NAME).md
-	echo '---\ntitle: "$(POST_TITLE)"\ndate: 2021-09-14T13:42:07-03:00\ndraft: false\n---' > ./content/posts/$(POST_NAME).md
-
-.PHONY: help    
+	echo '---\ntitle: "$(POST_TITLE)"\ndate: 2010-03=26T08:47:11+01:00\ndraft: false\n---' > ./content/posts/$(POST_NAME).md  	
+     
 help: ## da una breve descripcion de todos los comandos
-	grep '##' ./Makefile  | sed 's/ ##/ /' |  head -n -1 
+	grep '##' ./Makefile  | sed 's/ ##/ /' |  head -n -1
